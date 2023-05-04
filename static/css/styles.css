@@ -1,0 +1,71 @@
+.rat {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 400px;
+  height: auto;
+  transform: scaleX(-1);
+}
+
+header h2 {
+  background: #222 url(https://www.transparenttextures.com/patterns/wood-pattern.png) repeat center top;
+  text-size-adjust: auto;
+  font-size: larger;
+  colour: red;
+}
+
+#curve_chart, #curve_chart2 {
+  display: inline-block;
+  width: 600px;
+  height: 500px;
+  float: none;
+  margin-right: 5px; /* adjust margin as needed */
+}
+
+nav {
+  background: #222 url(https://www.transparenttextures.com/patterns/wood-pattern.png) repeat center top;
+  height: 50px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+nav li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+body {
+  margin: 20;
+  padding: 20;
+}
+
+footer {
+  background-origin: padding-box;
+  box-sizing: border-box;
+  content: counter(img);
+}
