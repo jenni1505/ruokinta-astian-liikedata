@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stored Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nippeli.css') }}">
+    <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <h1>Tallennettu Data</h1>
+    <div id="measurements-table"></div>
+
+    <script type="text/javascript">
+        var socket = io.connect();
+        socket.on('my_response', function(msg) {
+            // Parse the updated measurements data from the message
+            var measurements = JSON.parse(msg.result);
+
+            // Update the table with the new data
+            var tableBody = document.querySelector('#measurements-table table tbody');
+            tableBody.innerHTML = '';
+            for (var i = 0; i < measurements.length; i++) {
+                var mg = measurements[i];
+                var row = '<tr><td>' + mg[0] + '</td><td>' + mg[1] + '</td><td>' + mg[2] + '</td></tr>';
+                tableBody.innerHTML += row;
+            }
+        });
+    </script>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Alfa</th>
+                <th>Kallistuminen</th>
+                <th>Keinuminen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mg in measurements[-20:] %}
+                <tr>
+                    <td>{{ mg[0] }}</td>
+                    <td>{{ "{:.2f}".format(mg[1]) }}</td>
+                    <td>{{ "{:.2f}".format(mg[2]) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+

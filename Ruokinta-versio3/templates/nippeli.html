@@ -1,0 +1,104 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Lisätietoa</title>
+    <link rel="stylesheet" href="../static/css/nippeli.css">
+</head>
+<body>
+    <div class="header">
+        <h2>Projektin päähenkilöitä:</h2>
+        <p>Tavoitteena on edistää kanojen 
+            ruokinta-aikataulua keräämällä tarkempaa 
+            tietoa ruokailu-astian liikehdinnän ajankohdista.</p>
+        </div>
+    <div class="navbar">
+        <a href="/">Pääsivulle</a>
+        </div>
+    <div class="row">
+        <div class="main">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 5</div>
+                    <img src="../static/images/Kukko.jpeg" style="width:80%">
+                    <div class="text">Kukko the King</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 5</div>
+                    <img src="../static/images/Martta.jpeg" style="width:80%">
+                    <div class="text">Martta ruoka-astialla</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 5</div>
+                    <img src="../static/images/musti-tupsu.jpeg" style="width:80%">
+                    <div class="text">Vanha Rouva Musti-Tupsu</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 5</div>
+                    <img src="../static/images/tipu23.jpeg" style="width:80%">
+                    <div class="text">Kevään 2023 Tipu "Turbo"</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 5</div>
+                    <img src="../static/images/rat.png" style="width:60%" style="height:60%;">
+                    <div class="text">Vastustaja the Rat</div>
+                </div>
+
+            </div>
+
+                <div>
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+        </div>
+
+        
+        <div class="side">
+            <p>Harrastekanalassa elelee tällä hetkellä kukko ja herran viisi kanaa. 
+            Kanoja oli viime kesänä (2022) enemmänkin, mutta talveksi kantaa vähennettiin ja 
+            lahjoituksia tehtiin toiselle harrastekanalalle. Näin pyritään myös vähentämään
+            sukurutsaamista. Kissojen vanhettua ja syksyllä viimeisenkin hiiripyydystäjän 
+            menehtyessä 18-vuoden iässä, rottaongelma alkoi olla ilmeinen. Ruokaa väheni 
+            astialta kanojen määrään nähden liikaa. Ylimääräisten energiasyöppöjen liikehdinnästä 
+            tarvittiin kuitenkin selkeää dataa, sillä rotat eivät juurikaan näyttäydy 
+            valoisan aikaan. Ensimmäinen osa IOT-projektista keskittyikin rottaongelman
+            tunnistamiseen. Kanat nukkuvat poikkeuksetta yönsä orrella tai pesissä (hautovat kanat), joten kaikki liikehdintä 
+            ruoka-astialla klo 18-19 jälkeen kertoo muista syöjistä kuin kanoista. Kanoilla on selkeä vuorokausirytmi ja 
+            herääminen ja aamupala tapahtuu n. klo 7-9 välillä aamulla. Projektin toinen osa kerääkin dataa ruoka-astian 
+            aktiivisimmista käyttöhetkistä ja siten antaa tietoa kanalan ruokinta-aikojen parhaimmasta aikataulutuksesta. 
+            Edelleen seurantaa käytetään ilta-aikaiseen ruokinta-astian liikehdintään, jolloin tavoitteena on luonnollisesti saada 
+            dataa muista ruokinta-astian (väärin)käyttäjistä.</p>
+         </div>
+    </div>
+      
+      
+      <script> 
+      let slideIndex = 0;
+      showSlides();     
+      function showSlides() {
+          
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "table";  
+                dots[slideIndex-1].className += " active";
+                setTimeout(showSlides, 4000); // Change image every 4 seconds
+              }       
+      </script>
+      
+</body>
+</html> 
+     
